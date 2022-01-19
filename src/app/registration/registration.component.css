@@ -1,0 +1,14 @@
+.content{
+    max-width: 500px;
+    margin: auto;
+    background-color: beige;
+    text-align: center;
+    padding: 2% 2%;
+}
+button{
+    background-color: black;
+    color: white;
+}
+.error{
+    color: red;
+}

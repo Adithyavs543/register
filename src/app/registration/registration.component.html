@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <form class="content" [formGroup]="registrationForm" (ngSubmit)="submitData()">
+        <h1>registration form</h1>
+
+
+        <div class="row">
+            <div class=" mt-2 mb-2 col-lg-6 col-6">
+                <input type="text" formControlName="firstName" class="form-control" placeholder="firstname">
+                <div *ngIf="firstname.invalid && firstname.touched || firstname.dirty"></div>
+                <span class="error" *ngIf="firstname.errors?.required"> first name is required</span>
+                <span class="error" *ngIf="firstname.errors?.pattern"> enter only charater</span>
+            </div>
+
+
+            <div class=" mt-2 mb-2 col-lg-6 col-6">
+                <input type="text" formControlName="secondName" class="form-control" placeholder="lastname">
+                <div *ngIf="secondname.invalid && (secondname.touched || secondname.dirty )"></div>
+                <span class="error" *ngIf="secondname.errors?.required"> *First name is required</span>
+                <span class="error" *ngIf="secondname.errors?.pattern"> *Enter only charater</span>
+            </div>
+
+
+
+            <div class=" mt-2 mb-2 col-lg-12 col-12">
+                <input type="text" formControlName="emailId" class="form-control" placeholder="email">
+                <div *ngIf="emailid.invalid && (emailid.touched || emailid.dirty )"></div>
+                <span class="error" *ngIf="emailid.errors?.required"> *Email id is required</span>
+                <span class="error" *ngIf="emailid.errors?.email"> *Enter valid email Address</span>
+            </div>
+
+
+            <div class=" mt-2 mb-2 col-lg-12 col-12">
+                <input type="text" formControlName="phoneNumber" class="form-control" placeholder="phone number">
+                <div *ngIf="phonenum.invalid && (phonenum.touched || phonenum.dirty )"></div>
+                <span class="error" *ngIf="phonenum.errors?.required"> *Phone Number is required.</span>
+                <span class="error" *ngIf="phonenum.errors?.pattern"> *Enter only number.</span>
+            </div>
+
+
+
+            <div class="mt-2 mb-2 col-lg-12 col-12">
+                <button class="btn" [disabled]="registrationForm.invalid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
